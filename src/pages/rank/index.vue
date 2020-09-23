@@ -1,6 +1,6 @@
 <template>
     <view>
-        <touch-swiper @swiperaction="handleSwiperAction">
+        <touch-swiper>
             <view class="rank-wrapper">  
                 <view class="tabs-block">
                 <!-- 选择项 -->
@@ -64,6 +64,9 @@ export default {
     methods: {
         // 获取刷题数量前20
         getNumRank () {
+            uni.showLoading({
+                title: '加载中'
+            });
             getNumRank({
                 openID: getApp().globalData.openID
             })
@@ -121,13 +124,6 @@ export default {
             this.current = 1 - this.current;
             if (this.maxDaysRankList.length <= 0 && this.current === 1) {
                 this.getDaysRank();
-            }
-        },
-        handleSwiperAction ({direction}) {
-            if (direction === 'left' && this.current === 1) {
-               this.change();
-            } else if (direction === 'right' && this.current === 0) {
-               this.change();
             }
         }
     }
