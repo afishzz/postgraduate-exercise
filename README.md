@@ -43,5 +43,5 @@ npm install
 npm run dev:mp-weixin
 ```
 
-## 小程序二维码
-待上线
+## 访问小程序
+微信搜索小程序“考研刷题宝典+”
