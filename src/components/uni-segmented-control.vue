@@ -1,11 +1,13 @@
 <template>
-	<view :class="[styleType === 'text'?'segmented-control--text' : 'segmented-control--button' ]" :style="{ borderColor: styleType === 'text' ? '' : activeColor }"
-	 class="segmented-control">
-		<view v-for="(item, index) in values" :class="[ styleType === 'text'?'segmented-control__item--text': 'segmented-control__item--button' , index === currentIndex&&styleType === 'button'?'segmented-control__item--button--active': '' , index === 0&&styleType === 'button'?'segmented-control__item--button--first': '',index === values.length - 1&&styleType === 'button'?'segmented-control__item--button--last': '', index === currentIndex && styleType === 'text' ? 'selected-border' :'' ]"
-		 :key="index" :style="{
+	<view
+		:class="[styleType === 'text'?'segmented-control--text' : 'segmented-control--button' ]"
+		:style="{ borderColor: styleType === 'text' ? '' : activeColor }"
+		class="segmented-control">
+		<view v-for="(item, index) in values"
+			:class="[ styleType === 'text'?'segmented-control__item--text': 'segmented-control__item--button' , index === currentIndex&&styleType === 'button'?'segmented-control__item--button--active': '' , index === 0&&styleType === 'button'?'segmented-control__item--button--first': '',index === values.length - 1&&styleType === 'button'?'segmented-control__item--button--last': '', index === currentIndex && styleType === 'text' ? 'selected-border' :'' ]"
+			:key="index" :style="{
         backgroundColor: index === currentIndex && styleType === 'button' ? activeColor : '',borderColor: index === currentIndex&&styleType === 'text'||styleType === 'button'?activeColor:'transparent'
-      }"
-		 class="segmented-control__item" @click="_onClick(index)">
+      }" class="segmented-control__item" @click="_onClick(index)">
 			<text :style="{color:
           index === currentIndex
             ? styleType === 'text'
@@ -14,7 +16,7 @@
             : styleType === 'text'
               ? '#000'
               : activeColor, fontWeight: index === currentIndex ? 'bold' : ''}"
-			 class="segmented-control__text">{{ item }}</text>
+				class="segmented-control__text">{{ item }}</text>
 		</view>
 	</view>
 </template>
@@ -61,7 +63,9 @@
 			_onClick(index) {
 				if (this.currentIndex !== index) {
 					this.currentIndex = index
-					this.$emit('clickItem', {currentIndex:index})
+					this.$emit('clickItem', {
+						currentIndex: index
+					})
 				}
 			}
 		}
@@ -115,10 +119,11 @@
 	.segmented-control__item--text {
 		position: relative;
 	}
+
 	.selected-border:before {
-		content : "";
+		content: "";
 		position: absolute;
-		left    : 50%;
+		left: 50%;
 		transform: translateX(-50%);
 		bottom: 0;
 		height: 0;

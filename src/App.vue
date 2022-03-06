@@ -1,11 +1,11 @@
 <script>
-import { getUserOpenId } from './api/user.js';
+import { getUserOpenId } from "./api/user.js";
 
 export default {
-	globalData: {  
-		openID: ''  
-	}
-}
+  globalData: {
+    openID: "",
+  },
+};
 </script>
 
 <style>

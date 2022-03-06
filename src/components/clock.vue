@@ -8,25 +8,27 @@
 
 <script>
 	export default {
-		data(){
+		data() {
 			return {
-				hour:"00",
-				minute:"00",
-				second:"00",
-				totalCount:0,
-				timer:null
+				hour: "00",
+				minute: "00",
+				second: "00",
+				totalCount: 0,
+				timer: null
 			};
 		},
-		props:{
-			lists:{
-				type:Object
+		props: {
+			lists: {
+				type: Object
 			}
 		},
-		methods:{
-			end(){
+		methods: {
+			end() {
 				this.is_show = false;
 				clearInterval(this.timer);
-				this.$emit('clockend', `${ this.totalCount > 60 ? (Math.floor(this.totalCount / 60) + '′') : ''}${this.totalCount % 60}″`);
+				this.$emit('clockend',
+					`${ this.totalCount > 60 ? (Math.floor(this.totalCount / 60) + '′') : ''}${this.totalCount % 60}″`
+				);
 			},
 			showNum(num) {
 				if (num < 10) {
@@ -34,16 +36,17 @@
 				}
 				return num
 			},
-			start(){
+			start() {
 				let _this = this;
 				let count = 0;
-				_this.timer = setInterval(function(){
+				_this.timer = setInterval(function() {
 					count++;
 					_this.second = _this.showNum(count % 60);
 					_this.hour = _this.showNum(parseInt(count / 60 / 60));
-					_this.minute = _this.showNum(parseInt(count / 60) % 60);
+					_this.minute = _this.showNum(parseInt(count / 60) %
+						60);
 					_this.totalCount = count;
-				},1000);
+				}, 1000);
 				this.is_show = true;
 			}
 		}
@@ -51,7 +54,7 @@
 </script>
 
 <style lang="scss">
-	.clock{
+	.clock {
 		display: flex;
 	}
 </style>
