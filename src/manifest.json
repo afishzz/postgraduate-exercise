@@ -55,7 +55,7 @@
     /* 快应用特有相关 */
     "mp-weixin": {
         /* 微信小程序特有相关 */
-        "appid": "wx0e8cbbba3aab1125",
+        "appid": "wx0bda1d5aae9de2f2",
         "setting": {
             "urlCheck": false
         },

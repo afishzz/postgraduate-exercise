@@ -60,9 +60,9 @@
 				mode="aspectFill" />
 			<view class="section-rank-text">{{ title[4] }}</view>
 		</view>
-		<tip>
-		</tip>
-		<view class="continueToDevelop">功能持续开发中，打造超好用的刷题小程序</view>
+		<!-- <tip>
+		</tip> -->
+		<!-- <view class="continueToDevelop">功能持续开发中，打造超好用的刷题小程序</view> -->
 	</view>
 </template>
 
@@ -83,7 +83,7 @@
 	} from '../../api/notice.js';
 	import uniNoticeBar from '@/components/uni-notice-bar/uni-notice-bar/uni-notice-bar.vue';
 	import User from '@/components/user.vue';
-	import Tip from '@/components/tip.vue';
+	// import Tip from '@/components/tip.vue';
 
 	export default {
 		data() {
@@ -101,7 +101,7 @@
 		components: {
 			uniNoticeBar,
 			User,
-			Tip
+			// Tip
 		},
 		onLoad() {
 			wx.showShareMenu({
@@ -326,7 +326,7 @@
 	.content {
 		height: 100vh;
 		background: #eee;
-		padding-bottom: 300rpx;
+		/* padding-bottom: 300rpx; */
 
 		.notice-wrapper {
 			padding: 20rpx 0;

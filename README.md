@@ -35,7 +35,7 @@
 ```
 #克隆仓库
 git clone https://github.com/Phoebe0126/postgraduate-exercise.git
-#进入项目
+#进                             入项目
 cd postgraduate-exercise
 #安装依赖
 npm install
